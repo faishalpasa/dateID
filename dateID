@@ -2,18 +2,18 @@
 
 function dateID($date, $printHour=true){
 	$months = array (
-		'Januari',
-		'Februari',
-		'Maret',
-		'April',
-		'Mei',
-		'Juni',
-		'Juli',
-		'Agustus',
-		'September',
-		'Oktober',
-		'November',
-		'Desember'
+		1 => 'Januari',
+		2 => 'Februari',
+		3 => 'Maret',
+		4 => 'April',
+		5 => 'Mei',
+		6 => 'Juni',
+		7 => 'Juli',
+		8 => 'Agustus',
+		9 => 'September',
+		10 => 'Oktober',
+		11 => 'November',
+		12 => 'Desember'
 	);
   
   $expDateTime = explode(' ', $date);
@@ -23,7 +23,7 @@ function dateID($date, $printHour=true){
 	// var expDate[1] = month
 	// var expDate[2] = year
   
-  $date = $expDate[2] . ' ' . $moths[ (int)$expDate[1] ] . ' ' . $expDate[0];
+  $date = $expDate[2] . ' ' . $months[ (int)$expDate[1] ] . ' ' . $expDate[0];
   $time = substr($expDateTime[1], 0, -3);
   
  	if($printHour == true){
