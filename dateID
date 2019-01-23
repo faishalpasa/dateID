@@ -1,0 +1,34 @@
+<?php
+
+function dateID($date, $printHour=true){
+	$months = array (
+		'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	);
+  
+  $expDateTime = explode(' ', $date);
+	$expDate = explode('-', $expDateTime[0]);
+	
+	// var expDate[0] = day
+	// var expDate[1] = month
+	// var expDate[2] = year
+  
+  $date = $expDate[2] . ' ' . $moths[ (int)$expDate[1] ] . ' ' . $expDate[0];
+  $time = substr($expDateTime[1], 0, -3);
+  
+ 	if($printHour == true){
+ 		return $date. ' ' . $time;
+ 	}else{
+	 	return $date;
+	}
+}
